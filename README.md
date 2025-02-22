@@ -1,5 +1,3 @@
-# Blog
+# Site Imovél
 
-Este é o blog que foi criado no curso de Python de Luiz Otávio Miranda.
-
-Aluno João Paulo Rodrigues.....
+Este é o site que foi criado por João Paulo Rodrigues
