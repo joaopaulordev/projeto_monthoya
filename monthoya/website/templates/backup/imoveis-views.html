@@ -1,0 +1,21 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% load l10n %}
+
+{% block body %} 
+<h3>Loja</h3>
+
+<h2>Imóveis Mais Visualizados</h2>
+{% for imovel in imoveis_views %}
+    <p>
+        <a href="{% url 'ver_imovel' imovel.id %}">
+            <img src="{{ imovel.thumbnail.url }}" width="300">
+        </a>        
+        <br>
+        Nome: {{ imovel.titulo }} - {{imovel.views}}
+        <br>
+        Preço: {{ imovel.preco }}        
+    </p>
+{% endfor %} 
+
+{% endblock %}

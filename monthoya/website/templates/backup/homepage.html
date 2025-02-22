@@ -1,0 +1,40 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block body %}
+<h3>Home Page</h3>
+
+<h2>Imóveis em destaque</h2>
+{% for imovel in imoveis_destaque %}
+    <p>
+        <a href="{% url 'ver_imovel' imovel.id %}">
+            <img src="{{ imovel.thumbnail.url }}" width="300">
+        </a>        
+        <br>
+        Nome: {{ imovel.titulo }}
+        <br>
+        Preço: {{ imovel.preco }}
+    </p>
+{% endfor %} 
+
+
+<h2>Bairros</h2>
+{% for bairro in bairros %}
+    <p>
+        {{ bairro.descricao }}
+    </p>
+    {% for imovel in bairro.imovel_set.all %}
+        <p>
+            <a href="{% url 'ver_imovel' imovel.id %}">
+                <img src="{{ imovel.thumbnail.url }}" width="150">
+            </a>        
+            <br>
+            Nome: {{ imovel.titulo }}
+            <br>
+            Preço: {{ imovel.preco }}
+        </p>
+    {% endfor %} 
+{% endfor %} 
+
+{% endblock %}
+

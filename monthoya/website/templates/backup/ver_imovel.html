@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% load static %} {% block body %}
+
+
+    <h3>{{ imovel.titulo }}</h3>
+    <p>        
+        Nome: {{ imovel.id }}
+        <br>
+        Preço: {{ imovel.preco }} 
+    </p>
+    <div>        
+        {% for imovel_foto in imovel_fotos %} 
+            <img src="{{ imovel_foto.imagem.url }}" width="300" height="200">
+        {% endfor %}
+    </div>
+
+    
+    <h2>Videos</h2>
+
+
+    <h2> Realize seu contato sobre este imóvel</h2>
+    <form method="POST" action="{% url 'ver_imovel' imovel.id %}">
+        {% csrf_token %}
+        <input type="text" name="nome" placeholder="Nome">
+        <input type="text" name="email" placeholder="E-mail">
+        <input type="text" name="assunto" placeholder="Assunto">
+        <input type="text" name="telefone" placeholder="Telefone">
+        <textarea id="mensagem" name="mensagem" rows="6" cols="50">
+        </textarea>
+
+        <button type="submit">Realizar Contato</button>
+    </form>
+
+
+{% endblock %}

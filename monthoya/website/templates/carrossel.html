@@ -1,0 +1,37 @@
+{% load static %}
+<section class="carrossel">
+  <div class="carrossel__botoes">
+    <div class="carrossel__botao">
+      <div class="carrossel__preenchimento"></div>
+    </div>
+    <div class="carrossel__botao">
+      <div class="carrossel__preenchimento"></div>
+    </div>
+  </div>
+
+  <div class="carrossel__imagens">          
+    <div class="carrossel__item">
+      <a href="https://www.usereserva.com/faca-vc">
+        <img
+          src="{% static 'Imagens/lotes-cascavel.jpg' %}"
+          alt="Imagem 1 Desktop"
+        />
+        <img
+          src="https://lojausereserva.vtexassets.com/assets/vtex.file-manager-graphql/images/63f0c2c3-c1ab-4406-88f1-5565c2d23e9e___a4ffcc92bda5a2b1d7ad07117e698745.jpg"
+          alt="Imagem 1 Mobile"
+        />
+      </a>
+    </div>
+    <div class="carrossel__item">
+      <a href="https://www.usereserva.com/faca-vc">
+        <img
+          src="{% static 'Imagens/banner-casa-nova.jpg' %}"
+          alt="Imagem 2 Desktop"
+        /><img
+          src="https://lojausereserva.vtexassets.com/assets/vtex.file-manager-graphql/images/a7294ce0-496e-4b2b-b87a-d1cd73eb0eb2___6563aa4bdc15c2c7354efe77ccc86d5f.jpg"
+          alt="Imagem 2 Mobile"
+        />
+      </a>
+    </div>
+  </div>
+</section>

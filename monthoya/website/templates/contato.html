@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% load static %} {% block body %}
+
+<h2> realize seu contato sobre qualquer imóvel</h2>
+<form method="POST" action="{% url 'contato' %}">
+    {% csrf_token %}
+    <input type="text" name="nome" placeholder="Nome">
+    <input type="text" name="email" placeholder="E-mail">
+    <input type="text" name="assunto" placeholder="Assunto">
+    <input type="text" name="telefone" placeholder="Telefone">
+    <textarea id="mensagem" name="mensagem" rows="6" cols="50">
+    </textarea>
+
+    <button type="submit">Realizar Contato</button>
+</form>
+
+
+{% endblock %}

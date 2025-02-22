@@ -1,0 +1,31 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% load l10n %}
+
+{% block body %} 
+<h3>Loja</h3>
+
+<div style="display: flex;">
+    <div>
+        Ordenar por:
+        <ul>
+            <li><a href="#" class="item-ordenar" name="menor-preco">Menor Preço</a></li>
+            <li><a href="#" class="item-ordenar" name="maior-preco">Maior Preço</a></li>
+            <li><a href="#" class="item-ordenar" name="mais-vendidos">Mais visualizados</a></li>
+        </ul>
+        {% for imovel in imoveis %} 
+            <p>
+                <a href="{% url 'ver_imovel' imovel.id %}">
+                    <img src="{{ imovel.thumbnail.url }}" width="300">
+                </a>        
+                <br>
+                Nome: {{ imovel.titulo }}
+                <br>
+                Preço: {{ imovel.preco }}
+                <hr>
+            </p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
