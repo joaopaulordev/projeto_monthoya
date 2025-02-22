@@ -93,6 +93,7 @@ WSGI_APPLICATION = 'monthoya.wsgi.application'
 #     }
 # }
 
+
 DATABASES = {
     'default': {
         'ENGINE': os.getenv('DB_ENGINE', 'change-me'),
